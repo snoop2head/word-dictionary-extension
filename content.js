@@ -6,5 +6,7 @@ window.addEventListener("mouseup", selectWord);
 function selectWord() {
   console.log("word selected");
   let selectedText = window.getSelection();
-  console.log(selectedText);
+  // Javascript Object to string
+  let selectedTextString = selectedText.toString();
+  console.log(selectedTextString);
 }
