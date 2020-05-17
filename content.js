@@ -8,12 +8,13 @@ function selectWord() {
   let selectedText = window.getSelection();
   // change Javascript Object to string
   let selectedTextString = selectedText.toString().trim();
-  console.log(selectedTextString);
+  //   console.log(selectedTextString);
   if (selectedTextString.length > 0) {
     // send text to background.js
     let message = {
       text: selectedTextString,
     };
+    console.log(message);
     chrome.runtime.sendMessage(message);
   }
 }
