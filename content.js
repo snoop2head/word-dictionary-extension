@@ -4,9 +4,16 @@ console.log("content selector running");
 window.addEventListener("mouseup", selectWord);
 
 function selectWord() {
-  console.log("word selected");
+  //   console.log("word selected");
   let selectedText = window.getSelection();
-  // Javascript Object to string
+  // change Javascript Object to string
   let selectedTextString = selectedText.toString();
   console.log(selectedTextString);
+  if (selectedTextString.length > 0) {
+    // send text to background.js
+    let message = {
+      text: selectedTextString,
+    };
+    chrome.runtime.sendMessage(message);
+  }
 }
